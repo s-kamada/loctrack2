@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">locTrack</string>
+    <string name="title_activity_maps">locTrack</string>
+    <string name="start">Start\n</string>
+    <string name="stop">Stop\n</string>
+    <string name="oncreate">計測開始\n</string>
+    <string name="onstop">計測終了\n</string>
+    <string name="sendToServer">Send to Server</string>
+    <string name="action_settings">action_settings</string>
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyDkGYUu35ZERqEBIihVQUGxKs1NKtSqTvg</string>
+    <string name="location">location</string>
+    <string name="latitude">latitude</string>
+    <string name="longitude">longitude</string>
+    <string name="loading">loading&#8230;</string>
+</resources>
