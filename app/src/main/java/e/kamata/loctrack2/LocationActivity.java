@@ -70,7 +70,6 @@ public class LocationActivity extends AppCompatActivity {
     String JSON;
     //HACK add state message
     private static final DateFormat df = new SimpleDateFormat("HH:mm:ss", Locale.JAPAN);
-//    ComponentName mServicename;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -137,11 +136,6 @@ public class LocationActivity extends AppCompatActivity {
                 buttonStop.setEnabled(true);
                 buttonSend.setEnabled(true);
             }
-
-//
-//            public void onLocationUpdate(View v){
-//                buttonSend.setEnabled(true);
-//            }
         });
 
     }
@@ -455,8 +449,7 @@ public class LocationActivity extends AppCompatActivity {
                 textView.setText(textLog);
                 scrollView.post(new Runnable() {
                     @Override
-                    public void run() { scrollView.fullScroll(View.FOCUS_DOWN);
-                    }
+                    public void run() { scrollView.fullScroll(View.FOCUS_DOWN); }
                 });
             }
             job.clearSendLogs();

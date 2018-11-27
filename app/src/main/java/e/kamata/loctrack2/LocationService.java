@@ -14,9 +14,6 @@ import android.support.annotation.Nullable;
 
 public class LocationService extends Service {
 
-    static MainActivity main = new MainActivity();
-    static Context mcontext = main.getInstance().getContext();
-
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
@@ -30,14 +27,14 @@ public class LocationService extends Service {
             final int ID = 1;
             int requestCode = 0;
             String channelId = "default";
-            String title = mcontext.getString(R.string.app_name);
+            String title = this.getString(R.string.app_name);
 
             PendingIntent pendingIntent =
-                    PendingIntent.getActivity(mcontext, requestCode,
+                    PendingIntent.getActivity(this, requestCode,
                             intent, PendingIntent.FLAG_UPDATE_CURRENT);
             // ForegroundにするためNotificationが必要、Contextを設定
             NotificationManager notificationManager =
-                    (NotificationManager) mcontext.
+                    (NotificationManager) this.
                             getSystemService(Context.NOTIFICATION_SERVICE);
             // Notification　Channel 設定
             NotificationChannel channel = new NotificationChannel(
@@ -54,7 +51,7 @@ public class LocationService extends Service {
 
             if (notificationManager != null) {
                 notificationManager.createNotificationChannel(channel);
-                Notification notification = new Notification.Builder(mcontext, channelId)
+                Notification notification = new Notification.Builder(this, channelId)
                         .setContentTitle(title)
                         // 本来なら衛星のアイコンですがandroid標準アイコンを設定
                         .setSmallIcon(android.R.drawable.btn_star)
